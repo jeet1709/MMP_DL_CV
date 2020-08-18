@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mood Dectector</title>
+<link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css" >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(window).on("scroll", function() {
+    if($(window).scrollTop() > 100) {
+        $(".header").addClass("active");
+    } else {
+        //remove the background property so it comes transparent again (defined in your css)
+       $(".header").removeClass("active");
+    }
+});
+
+</script>
+
+</head>
+<body>
+          <!-- <div class="text1"><img src="{% static 'image/logo.jpg' %}" style="float:top;width:100px;height:100px;"></div> -->
+          <!-- <button class="text3"> signup</button>
+          <button class="text3"> login</button>
+          <button class="text3">Music Player</button>
+          <button class="text3"> About</button> -->
+          <div class="sec1" id="home" style="background-image: url({% static 'image/bg9.jpg' %})">
+          <div class="header" id="myHeader">
+              <span class="logo"><img src="{% static 'image/logom.jpeg' %}" style="float:top left;width:70px;height:65px;"><div class="title">Moody Player</div></span>
+              <ul>
+              <li><a href="#home" >Home</a></li>
+              <li><a href="#about">About Us</a>  </li>
+              <!-- <li><a href="{% static '#' %}">Team</a>  </li> -->
+              <li><a href="#contact">Contact</a>  </li>
+              <li><a href="{% url 'login_user' %}">login</a>  </li>
+              <li><a href="{% url 'register_user' %}">sign up</a>  </li>
+              </ul>
+          </div>
+            <div class="guide"><br><br><br><br>Guidelines to Access our website</div>
+            <iframe width="740" height="390" src="https://crypton.trading/"  scrolling="auto" allowfullscreen  id="p1"></iframe>
+          </div>
+          <div id="contact" style="background-image: url({% static 'image/bg17.jpg' %})">
+          <div class="container">
+          <div class="bio">CONTACT US</div>
+          <div class="box"><img class="logo_box" src="{% static 'image/circle-cropped.png' %}">
+                   <div class="text1">ASK US</div>
+                   <div class="text2"><p> Send us your question(s)</p></div>
+          </div>
+          <div class="box"><img class="logo_box" src="{% static 'image/feedback1.png' %}">
+                  <div class="text1">FEEDBACK</div>
+                  <div class="text2"><p> Share your thoughts,comments and suggestions</p></div>
+          </div>
+          <div class="box"><img class="logo_box" src="{% static 'image/location1.png' %}">
+                <div class="text1">VISIT US</div>
+                <div class="text2"><p> SVNIT CAMPUS,ICCHANATH CIRCLE,DUMAS ROAD,SURAT,GUJARAT,INDIA</p><p>PIN-395007</p></div>
+          </div>
+          <div class="text3">FOLLOW US AT:
+            <a href="https://www.facebook.com"><img border="0"  src="{% static 'image/fb.png' %}" width="30" height="30"></a>
+            <a href="https://www.instagram.com"><img border="0" src="{% static 'image/insta.jpeg' %}" width="30" height="30"></a>
+            <a href="https://www.linkedin.com"><img border="0"  src="{% static 'image/linkedin.png' %}" width="30" height="30"></a>
+            <a href="https://www.messenger.com"><img border="0"  src="{% static 'image/messenger.png' %}" width="30" height="30"></a>
+            <a href="https://www.twitter.com"><img border="0"  src="{% static 'image/twitter.png' %}" width="30" height="30"></a><br><br><br>
+          </div>
+          </div>
+         </div>
+          <script type="text/javascript">
+          window.onscroll = function() {myFunction()};
+
+          var header = document.getElementById("myHeader");
+          var sticky = header.offsetTop;
+
+          function myFunction() {
+          if (window.pageYOffset > sticky) {
+          header.classList.add("sticky");
+          } else {
+          header.classList.remove("sticky");
+          }
+          }
+          </script>
+
+<body>
+</html>
